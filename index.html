@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Technology, Our Discoveries — A Procurement Outreach Concept for CERN</title>
+<meta name="description" content="A concept communication campaign for CERN's Procurement Service, designed to strengthen industry outreach. Created by Bengi Özateş." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cern-blue: #003399;
+    --cern-blue-deep: #001a4d;
+    --cern-blue-light: #1a4db3;
+    --cern-blue-pale: #e8eef8;
+    --warm: #d4a843;
+    --warm-soft: #f5e6c0;
+    --ink: #1a1a2e;
+    --ink-soft: #3d3d54;
+    --ink-muted: #6b6b80;
+    --light: #fafafa;
+    --white: #ffffff;
+    --rule: #dcdce0;
+    --rule-light: #eeeeef;
+    --success: #1a8a5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'DM Serif Display', Georgia, serif; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+  .wrap-narrow { max-width: 740px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--cern-blue);
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--warm); }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--cern-blue); }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 110px;
+    background: var(--cern-blue-deep);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,51,153,0.5), transparent 65%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(212,168,67,0.08), transparent 65%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    padding: 6px 16px;
+    border: 1px solid rgba(212,168,67,0.4);
+    border-radius: 100px;
+    margin-bottom: 32px;
+  }
+  h1.hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 1.04;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 14ch;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--warm);
+  }
+  .hero-lede {
+    font-size: 19px;
+    max-width: 56ch;
+    opacity: 0.85;
+    margin-bottom: 48px;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 14px;
+  }
+  .hero-meta > div strong {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .hero-meta > div span {
+    opacity: 0.55;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  .curated-by {
+    margin-top: 44px;
+    font-size: 13px;
+    opacity: 0.65;
+    font-style: italic;
+  }
+  .curated-by strong { color: var(--warm); font-style: normal; font-weight: 600; opacity: 1; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cern-blue);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--cern-blue);
+  }
+
+  /* EDITORIAL */
+  .editorial {
+    padding: 110px 0;
+    background: var(--light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .editorial h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 36px;
+    max-width: 22ch;
+  }
+  .editorial p {
+    font-size: 18px;
+    margin-bottom: 22px;
+    color: var(--ink-soft);
+    max-width: 64ch;
+    line-height: 1.6;
+  }
+  .pullquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--cern-blue);
+    padding: 44px 0 44px 36px;
+    margin: 48px 0;
+    border-left: 3px solid var(--warm);
+    max-width: 26ch;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .stat {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--rule-light);
+    border-radius: 6px;
+  }
+  .stat .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--cern-blue);
+    margin-bottom: 6px;
+  }
+  .stat .label {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.45;
+  }
+
+  /* CAMPAIGN CONCEPT */
+  .campaign {
+    padding: 110px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .campaign h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    max-width: 20ch;
+  }
+  .campaign .intro {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-bottom: 56px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .pillar {
+    padding: 32px 28px;
+    background: var(--cern-blue-pale);
+    border-radius: 6px;
+    border-top: 3px solid var(--cern-blue);
+  }
+  .pillar .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--cern-blue);
+    margin-bottom: 8px;
+  }
+  .pillar h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .pillar p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* INTERACTIVE SUPPLIER JOURNEY */
+  .journey {
+    padding: 110px 0;
+    background: var(--cern-blue-deep);
+    color: var(--white);
+  }
+  .journey .section-label { color: var(--warm); }
+  .journey .section-label::before { background: var(--warm); }
+  .journey h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: 20ch;
+  }
+  .journey .lede {
+    font-size: 17px;
+    opacity: 0.8;
+    max-width: 56ch;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+  .journey-tool {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 44px;
+  }
+  @media (max-width: 640px) { .journey-tool { padding: 24px; } }
+  .j-step { display: none; }
+  .j-step.active { display: block; animation: fadeUp 0.4s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .j-counter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    color: var(--warm);
+    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+  }
+  .j-step h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  .j-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 640px) { .j-options { grid-template-columns: 1fr; } }
+  .j-opt {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 18px 22px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 4px;
+    line-height: 1.4;
+  }
+  .j-opt:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--warm);
+    transform: translateY(-1px);
+  }
+  .j-opt strong { display: block; font-weight: 600; margin-bottom: 3px; }
+  .j-opt span { font-size: 13px; opacity: 0.65; }
+  .j-progress {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .j-progress div {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+  .j-progress div.done { background: var(--warm); }
+  .j-result { display: none; }
+  .j-result.active { display: block; animation: fadeUp 0.5s ease; }
+  .j-result-label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 12px;
+    color: var(--warm);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .j-result h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .j-result p { font-size: 16px; margin-bottom: 18px; opacity: 0.88; max-width: 58ch; }
+  .j-highlight {
+    background: rgba(212,168,67,0.1);
+    border-left: 3px solid var(--warm);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .j-highlight strong {
+    color: var(--warm);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .j-restart {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: var(--white);
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+    border-radius: 3px;
+  }
+  .j-restart:hover { background: rgba(255,255,255,0.06); border-color: var(--warm); }
+
+  /* LINKEDIN */
+  .linkedin-section {
+    padding: 110px 0;
+    background: var(--light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .linkedin-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    max-width: 20ch;
+  }
+  .linkedin-section > .wrap > .intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 48px;
+  }
+  .linkedin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .linkedin-post {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .linkedin-post .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cern-blue);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding: 3px 10px;
+    background: var(--cern-blue-pale);
+    border-radius: 100px;
+  }
+  .linkedin-post p { margin-bottom: 10px; }
+  .linkedin-post .hashtags { color: var(--cern-blue-light); font-size: 13px; margin-top: 14px; font-weight: 500; }
+  .linkedin-post .post-title { font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+
+  /* EMAIL */
+  .email-section {
+    padding: 110px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .email-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    max-width: 20ch;
+  }
+  .email-section > .wrap > .intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 48px;
+  }
+  .email-mock {
+    background: var(--light);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    max-width: 660px;
+    overflow: hidden;
+  }
+  .email-bar {
+    padding: 10px 20px;
+    background: var(--cern-blue-deep);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .email-bar .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+  .email-bar .dot:first-child { background: #ff5f57; }
+  .email-bar .dot:nth-child(2) { background: #febc2e; }
+  .email-bar .dot:nth-child(3) { background: #28c840; }
+  .email-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--white);
+  }
+  .email-header .row {
+    display: flex;
+    gap: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .email-header .row span:first-child {
+    color: var(--ink-muted);
+    font-weight: 500;
+    min-width: 60px;
+  }
+  .email-body {
+    padding: 32px 28px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    background: var(--white);
+  }
+  .email-body h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .email-body p { margin-bottom: 14px; }
+  .email-body .em-link { color: var(--cern-blue); font-weight: 500; text-decoration: underline; }
+  .email-body .em-cta {
+    display: inline-block;
+    background: var(--cern-blue);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 8px 0 16px;
+    letter-spacing: 0.02em;
+  }
+  .email-body .em-footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-light);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+
+  /* WORDPRESS WIREFRAME */
+  .wp-section {
+    padding: 110px 0;
+    background: var(--light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .wp-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    max-width: 22ch;
+  }
+  .wp-section > .wrap > .intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 48px;
+  }
+  .wp-wireframe {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 820px;
+  }
+  .wp-browser-bar {
+    background: #f0f0f0;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wp-dots { display: flex; gap: 5px; }
+  .wp-dots span { width: 10px; height: 10px; border-radius: 50%; background: #ccc; }
+  .wp-url {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--ink-muted);
+    font-family: 'DM Sans', monospace;
+  }
+  .wp-page {
+    padding: 0;
+  }
+  .wp-nav-bar {
+    background: var(--cern-blue-deep);
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wp-nav-logo {
+    color: var(--white);
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+  }
+  .wp-nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  .wp-nav-links li {
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .wp-hero-block {
+    background: linear-gradient(135deg, var(--cern-blue-deep), var(--cern-blue));
+    padding: 48px 28px;
+    color: var(--white);
+    text-align: center;
+  }
+  .wp-hero-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 10px;
+    max-width: none;
+  }
+  .wp-hero-block p { font-size: 14px; opacity: 0.8; max-width: 48ch; margin: 0 auto 20px; }
+  .wp-hero-block .wp-cta {
+    display: inline-block;
+    background: var(--warm);
+    color: var(--cern-blue-deep);
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .wp-content-area {
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 640px) { .wp-content-area { grid-template-columns: 1fr; } }
+  .wp-card {
+    border: 1px solid var(--rule-light);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .wp-card-img {
+    height: 100px;
+    background: linear-gradient(135deg, var(--cern-blue-pale), #d0ddf0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+  .wp-card-body { padding: 16px; }
+  .wp-card-body h4 { font-size: 14px; font-weight: 600; color: var(--cern-blue-deep); margin-bottom: 6px; }
+  .wp-card-body p { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+  .wp-card-body .wp-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--cern-blue);
+    background: var(--cern-blue-pale);
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-top: 8px;
+  }
+  .wp-sidebar h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cern-blue-deep);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cern-blue);
+  }
+  .wp-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  .wp-sidebar li {
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .wp-sidebar li:last-child { border-bottom: none; }
+  .wp-sidebar .stat-mini {
+    background: var(--cern-blue-pale);
+    padding: 16px;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 16px;
+  }
+  .wp-sidebar .stat-mini .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--cern-blue);
+  }
+  .wp-sidebar .stat-mini .lbl {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+  .wp-annotation {
+    margin-top: 20px;
+    padding: 20px 24px;
+    background: var(--warm-soft);
+    border-left: 3px solid var(--warm);
+    border-radius: 0 6px 6px 0;
+    max-width: 820px;
+  }
+  .wp-annotation .ann-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 8px;
+  }
+  .wp-annotation p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  /* SKILLS MATRIX */
+  .skills-section {
+    padding: 110px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .skills-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    color: var(--cern-blue-deep);
+    margin-bottom: 16px;
+    max-width: 24ch;
+  }
+  .skills-section > .wrap > .intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 48px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    padding: 24px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  .skill-card:hover { border-color: var(--cern-blue); }
+  .skill-card .skill-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--cern-blue-deep);
+    margin-bottom: 6px;
+  }
+  .skill-card .skill-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .skill-card .skill-evidence {
+    font-size: 12px;
+    color: var(--cern-blue);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .skill-card .skill-evidence::before {
+    content: "→";
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 0 56px;
+    background: var(--cern-blue-deep);
+    color: var(--white);
+    text-align: center;
+  }
+  footer .logo {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  footer .logo span { color: var(--warm); }
+  footer p { font-size: 14px; opacity: 0.7; max-width: 56ch; margin: 0 auto 8px; line-height: 1.6; }
+  footer .disclaimer {
+    margin-top: 28px;
+    padding: 18px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    font-size: 12px;
+    font-style: italic;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.65;
+    line-height: 1.6;
+  }
+  footer .signature {
+    margin-top: 28px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--warm);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">CERN Procurement <span>·</span> Concept</div>
+    <ul>
+      <li><a href="#editorial">The Opportunity</a></li>
+      <li><a href="#campaign">Campaign</a></li>
+      <li><a href="#journey">Supplier Journey</a></li>
+      <li><a href="#linkedin">LinkedIn</a></li>
+      <li><a href="#email">Newsletter</a></li>
+      <li><a href="#wordpress">Web Concept</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Concept Campaign · Portfolio Piece</div>
+    <h1 class="hero-title">Your technology, <em>our discoveries.</em></h1>
+    <p class="hero-lede">A concept outreach campaign designed to help European industry see itself as part of the world's most ambitious scientific project. This page demonstrates how the Procurement Service's story could be told — across social media, web content, email, and digital campaigns.</p>
+    <div class="hero-meta">
+      <div><span>Annual spend</span><strong>~500 MCHF</strong></div>
+      <div><span>Member states</span><strong>24 countries</strong></div>
+      <div><span>Upcoming</span><strong>FCC Project</strong></div>
+      <div><span>Format</span><strong>Multi-channel</strong></div>
+    </div>
+    <div class="curated-by">Concept created by <strong>Bengi Özateş</strong> as part of a candidate portfolio for the Communication Support Officer (Procurement) position at CERN.</div>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial" id="editorial">
+  <div class="wrap-narrow">
+    <div class="section-label">The Opportunity</div>
+    <h2>Behind every discovery, there is a supply chain.</h2>
+    <p>When people hear "CERN," they think of the Higgs boson, of particle collisions at nearly the speed of light, of questions about the fundamental structure of the universe. What they rarely think about is the thousands of companies across Europe that make this work physically possible.</p>
+    <p>Every superconducting magnet, every vacuum chamber, every cable and sensor and cryogenic valve was designed, manufactured, and delivered by a firm — often a small or medium-sized enterprise — that learned to meet tolerances the rest of the market never asks for. These companies do not just supply parts. They become part of the research infrastructure itself.</p>
+    <p>And yet, many companies that could contribute to CERN's mission have never heard of CERN's procurement process. They do not know that opportunities exist, how to register, or what it means to be a supplier to big science.</p>
+    <blockquote class="pullquote">The communication challenge is not about what CERN does. It is about who else belongs in the story.</blockquote>
+    <p>This is a communication challenge. The science is already extraordinary. The engineering is already world-class. What is needed is a way to bridge the gap between what CERN needs and what industry can offer — and to do it through content that is clear, engaging, and built for the platforms where decision-makers actually spend their attention.</p>
+    <p>With the Future Circular Collider entering its preparatory phase, the next decade will bring an unprecedented wave of procurement opportunities — from civil engineering and cryogenics to detector components and sustainable materials. The moment to strengthen industry outreach is now.</p>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="number">500M+</div>
+        <div class="label">Swiss Francs spent annually on goods and services</div>
+      </div>
+      <div class="stat">
+        <div class="number">90.7 km</div>
+        <div class="label">Circumference of the proposed FCC tunnel</div>
+      </div>
+      <div class="stat">
+        <div class="number">800,000</div>
+        <div class="label">Person-years of employment linked to FCC</div>
+      </div>
+      <div class="stat">
+        <div class="number">15.3×</div>
+        <div class="label">Revenue generated per euro of LHC procurement spend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN CONCEPT -->
+<section class="campaign" id="campaign">
+  <div class="wrap">
+    <div class="section-label">Campaign Framework</div>
+    <h2>"Your technology, our discoveries."</h2>
+    <p class="intro">A proposed outreach campaign built on three communication pillars, each designed to move a different audience segment closer to engaging with CERN's procurement process.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>Visibility</h3>
+        <p>Many potential suppliers do not know CERN procures commercially. The first pillar focuses on awareness: making the procurement process visible to European industry through LinkedIn content, industry event presence, and ILO coordination. Content answers the question: "CERN buys from companies like ours?"</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>Accessibility</h3>
+        <p>Companies that discover CERN procurement often find the entry process unclear. The second pillar simplifies the journey: clearer web content, visual guides to the tendering process, and a restructured procurement website that walks first-time visitors through registration step by step.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>Community</h3>
+        <p>Suppliers who have worked with CERN are the best advocates for future ones. The third pillar turns existing partners into storytellers: supplier spotlight features, video interviews, and case studies that show what working with CERN actually looks like from the industry side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SUPPLIER JOURNEY -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="section-label">Interactive · 60 seconds</div>
+    <h2>The Supplier Journey Navigator</h2>
+    <p class="lede">A diagnostic tool for companies exploring procurement opportunities with CERN. Three questions, a personalised recommendation. No sign-up, no data stored.</p>
+    <div class="journey-tool">
+      <div class="j-progress" id="j-progress">
+        <div class="done"></div><div></div><div></div>
+      </div>
+
+      <div class="j-step active" data-step="1">
+        <div class="j-counter">Question 1 of 3</div>
+        <h3>What best describes your company's relationship with CERN today?</h3>
+        <div class="j-options">
+          <button class="j-opt" data-key="stage" data-value="new"><strong>Never heard of CERN procurement</strong><span>Just discovering this exists</span></button>
+          <button class="j-opt" data-key="stage" data-value="curious"><strong>Aware but not registered</strong><span>Know about CERN but haven't engaged</span></button>
+          <button class="j-opt" data-key="stage" data-value="registered"><strong>Registered on the platform</strong><span>In the supplier database, waiting for opportunities</span></button>
+          <button class="j-opt" data-key="stage" data-value="active"><strong>Active or past supplier</strong><span>Have bid on or completed CERN contracts</span></button>
+        </div>
+      </div>
+
+      <div class="j-step" data-step="2">
+        <div class="j-counter">Question 2 of 3</div>
+        <h3>What sector does your company operate in?</h3>
+        <div class="j-options">
+          <button class="j-opt" data-key="sector" data-value="engineering"><strong>Mechanical &amp; electrical engineering</strong><span>Precision components, machining, electronics</span></button>
+          <button class="j-opt" data-key="sector" data-value="civil"><strong>Civil engineering &amp; construction</strong><span>Tunnelling, infrastructure, materials</span></button>
+          <button class="j-opt" data-key="sector" data-value="cryo"><strong>Cryogenics, vacuum &amp; magnets</strong><span>Superconducting tech, vacuum systems</span></button>
+          <button class="j-opt" data-key="sector" data-value="it"><strong>IT, software &amp; services</strong><span>Computing, data, professional services</span></button>
+        </div>
+      </div>
+
+      <div class="j-step" data-step="3">
+        <div class="j-counter">Question 3 of 3</div>
+        <h3>What is the biggest barrier you face in engaging with CERN?</h3>
+        <div class="j-options">
+          <button class="j-opt" data-key="barrier" data-value="process"><strong>The process feels complex</strong><span>Tendering procedures, registration steps</span></button>
+          <button class="j-opt" data-key="barrier" data-value="visibility"><strong>Don't know what's available</strong><span>Hard to find relevant opportunities</span></button>
+          <button class="j-opt" data-key="barrier" data-value="scale"><strong>Unsure if we're the right size</strong><span>Worried we're too small or too specialised</span></button>
+          <button class="j-opt" data-key="barrier" data-value="ilo"><strong>Don't know where to start</strong><span>Need a first contact or introduction</span></button>
+        </div>
+      </div>
+
+      <div class="j-result" id="j-result">
+        <div class="j-result-label">Your personalised readout</div>
+        <h3 id="j-headline"></h3>
+        <p id="j-body"></p>
+        <div class="j-highlight">
+          <strong>Your recommended next step</strong>
+          <span id="j-next"></span>
+        </div>
+        <p id="j-extra"></p>
+        <button class="j-restart" onclick="restartJourney()">↻ Start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKEDIN -->
+<section class="linkedin-section" id="linkedin">
+  <div class="wrap">
+    <div class="section-label">Social Media Campaign</div>
+    <h2>LinkedIn content sequence.</h2>
+    <p class="intro">Three posts designed for CERN's LinkedIn channel, sequenced across two weeks to build awareness of procurement opportunities among industry audiences.</p>
+    <div class="linkedin-grid">
+      <div class="linkedin-post">
+        <div class="tag">Week 1 · Awareness</div>
+        <p class="post-title">Behind every discovery, there is a supply chain.</p>
+        <p>When the Higgs boson was confirmed in 2012, the world celebrated a scientific milestone. Behind it were thousands of contracts with companies across CERN's Member States — firms that designed, manufactured, and delivered the components that made the discovery physically possible.</p>
+        <p>Today, CERN invests around 500 million Swiss Francs annually in goods and services from industry. From precision machining and cryogenic systems to civil engineering and IT infrastructure, the range of procurement needs is broad — and growing.</p>
+        <p>With the Future Circular Collider entering its preparatory phase, the next decade will bring unprecedented opportunities for European industry to contribute to fundamental research.</p>
+        <p>Is your company ready to supply the future of science?</p>
+        <p class="hashtags">#BusinessWithCERN #CERNProcurement #FCC #IndustryInnovation #BigScience</p>
+      </div>
+
+      <div class="linkedin-post">
+        <div class="tag">Week 1 · Supplier Spotlight</div>
+        <p class="post-title">Supplier spotlight: From a first market survey to a flagship contract.</p>
+        <p>[Company name], a [sector] firm based in [Member State], first registered on CERN's e-Procurement platform in [year]. Their initial engagement was a market survey response for [component type].</p>
+        <p>Three years later, they were awarded a contract worth [value] CHF for [project], contributing critical technology to [accelerator/experiment].</p>
+        <p>"Working with CERN pushed our engineering capabilities beyond what we thought possible. The specifications were demanding, but the collaboration was extraordinary." — [Name, Title]</p>
+        <p>Every CERN supplier started somewhere. Explore how to register and receive opportunities in your sector. [Link to procurement website]</p>
+        <p class="hashtags">#CERNSuppliers #SupplierStory #TechnologyTransfer #BusinessWithCERN</p>
+      </div>
+
+      <div class="linkedin-post">
+        <div class="tag">Week 2 · How-to</div>
+        <p class="post-title">How to become a CERN supplier: 4 things to know.</p>
+        <p><strong>1. Registration is free and open.</strong> Any company from a CERN Member or Associate Member State can register on the e-Procurement platform to receive notifications about relevant tendering opportunities.</p>
+        <p><strong>2. Your national ILO is your first contact.</strong> Each Member State has an Industrial Liaison Officer who acts as a bridge between local industry and CERN's procurement team.</p>
+        <p><strong>3. Size is not a barrier.</strong> CERN works with companies of all sizes. Many of its most critical suppliers are SMEs with specialised technical capabilities.</p>
+        <p><strong>4. The FCC will expand demand significantly.</strong> The proposed 90.7 km Future Circular Collider is expected to generate substantial new procurement needs across multiple sectors.</p>
+        <p>Start your journey: [Link to supplier registration]</p>
+        <p class="hashtags">#HowTo #CERNProcurement #SME #FCC #BusinessWithCERN</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-section" id="email">
+  <div class="wrap">
+    <div class="section-label">Newsletter Concept</div>
+    <h2>Monthly industry update.</h2>
+    <p class="intro">A concept email template for a regular newsletter to registered suppliers and industry contacts, keeping them informed about upcoming opportunities and procurement news.</p>
+    <div class="email-mock">
+      <div class="email-bar">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <div class="email-header">
+        <div class="row"><span>From</span><span>CERN Procurement Service</span></div>
+        <div class="row"><span>To</span><span>Registered suppliers &amp; industry contacts</span></div>
+        <div class="row"><span>Subject</span><span>CERN Procurement Update · May 2026</span></div>
+      </div>
+      <div class="email-body">
+        <h3>Your monthly update from CERN Procurement.</h3>
+        <p>Dear colleagues,</p>
+        <p>Here is what is happening across CERN's procurement landscape this month — from upcoming tenders to industry events and new ways to engage with us.</p>
+
+        <p><strong>Forthcoming market surveys</strong><br/>Three new market surveys have been published this month across civil engineering, detector components, and IT services. All are accessible through the <span class="em-link">e-Procurement platform</span> and open to firms from CERN Member and Associate Member States.</p>
+
+        <p><strong>FCC preparatory phase update</strong><br/>The CERN Council is expected to discuss the European Strategy for Particle Physics update in May 2026, with the FCC featuring as the recommended flagship project. For industry, this signals growing procurement opportunities in areas including tunnelling, cryogenics, magnet manufacturing, and sustainable construction materials. We will communicate sector-specific briefings as the project progresses.</p>
+
+        <p><strong>Industry event: BSBF 2026</strong><br/>The Big Science Business Forum returns this year. CERN's Procurement Service will host a dedicated session on upcoming needs and how to prepare for large-scale tendering. More details to follow.</p>
+
+        <span class="em-cta">View all open opportunities →</span>
+
+        <p><strong>Supplier registration reminder</strong><br/>If colleagues in your network work in sectors relevant to CERN, please encourage them to register on our <span class="em-link">e-Procurement platform</span>. Registration is free, and all firms from Member and Associate Member States are welcome.</p>
+
+        <p>Warm regards,<br/>The CERN Procurement Service<br/><em>procurement.web.cern.ch</em></p>
+        <div class="em-footer">
+          This email is sent to registered suppliers and industry contacts of CERN's Procurement and Industrial Services Group. To update your preferences or unsubscribe, visit your supplier profile on the e-Procurement platform.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORDPRESS WIREFRAME -->
+<section class="wp-section" id="wordpress">
+  <div class="wrap">
+    <div class="section-label">WordPress Concept</div>
+    <h2>A fresher procurement homepage.</h2>
+    <p class="intro">A visual concept for how the Procurement website could be restructured to better serve first-time visitors and returning suppliers — clearer pathways, featured stories, and prominent access to opportunities.</p>
+    <div class="wp-wireframe">
+      <div class="wp-browser-bar">
+        <div class="wp-dots"><span></span><span></span><span></span></div>
+        <div class="wp-url">procurement.web.cern.ch</div>
+      </div>
+      <div class="wp-page">
+        <div class="wp-nav-bar">
+          <div class="wp-nav-logo">CERN · Procurement</div>
+          <ul class="wp-nav-links">
+            <li>How to work with us</li>
+            <li>Opportunities</li>
+            <li>Supplier stories</li>
+            <li>Events</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="wp-hero-block">
+          <h2>Your technology, our discoveries.</h2>
+          <p>CERN works with companies across its Member States to build, maintain, and advance the world's most ambitious research infrastructure.</p>
+          <a href="#" class="wp-cta">Explore opportunities →</a>
+        </div>
+        <div class="wp-content-area">
+          <div class="wp-main">
+            <div class="wp-card">
+              <div class="wp-card-img">[ Photo: supplier visit at CERN ]</div>
+              <div class="wp-card-body">
+                <h4>Supplier spotlight: KrioSystem and the HL-LHC cryogenics contract</h4>
+                <p>How a Polish engineering firm became a key partner in the High-Luminosity LHC upgrade — from first market survey to contract delivery.</p>
+                <span class="wp-tag">Supplier story</span>
+              </div>
+            </div>
+            <div class="wp-card">
+              <div class="wp-card-img">[ Photo: FCC tunnel rendering ]</div>
+              <div class="wp-card-body">
+                <h4>Future Circular Collider: what it means for industry</h4>
+                <p>A guide to the procurement opportunities expected to emerge as the FCC moves from feasibility to implementation.</p>
+                <span class="wp-tag">FCC &amp; industry</span>
+              </div>
+            </div>
+            <div class="wp-card">
+              <div class="wp-card-img">[ Infographic: 4-step process ]</div>
+              <div class="wp-card-body">
+                <h4>New to CERN procurement? Start here.</h4>
+                <p>A step-by-step guide for companies exploring how to register, find opportunities, and submit their first bid.</p>
+                <span class="wp-tag">Getting started</span>
+              </div>
+            </div>
+          </div>
+          <div class="wp-sidebar">
+            <h4>Open opportunities</h4>
+            <ul>
+              <li>Market survey: Cryogenic transfer lines (closes 15 Jun)</li>
+              <li>Tender: IT infrastructure maintenance (closes 22 May)</li>
+              <li>Market survey: Radiation-hard electronics (closes 30 Jun)</li>
+              <li>Tender: Civil engineering consultancy (closes 10 Jun)</li>
+            </ul>
+            <div class="stat-mini">
+              <div class="num">500M+</div>
+              <div class="lbl">CHF spent on goods &amp; services annually</div>
+            </div>
+            <h4 style="margin-top: 20px;">Upcoming events</h4>
+            <ul>
+              <li>BSBF 2026 — Industry session (Sep 2026)</li>
+              <li>CERN Industry Webinar (Oct 2026)</li>
+              <li>Italy@CERN (Nov 2026)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wp-annotation">
+      <div class="ann-label">Design rationale</div>
+      <p>The current procurement website leads with institutional information. This concept restructures the homepage around three visitor intents: companies exploring CERN for the first time ("How to work with us"), returning suppliers checking opportunities ("Open tenders"), and stakeholders seeking impact stories ("Supplier stories"). The hero banner foregrounds the campaign tagline, and the sidebar surfaces live opportunities without requiring extra clicks. Content is designed for WordPress block editor compatibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section class="skills-section" id="skills">
+  <div class="wrap">
+    <div class="section-label">What this project demonstrates</div>
+    <h2>Skills applied in this concept piece.</h2>
+    <p class="intro">Each section of this page was designed to demonstrate a specific capability listed in the job description for the Communication Support Officer (Procurement) role.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">Content creation across multiple formats</div>
+        <div class="skill-desc">LinkedIn posts, newsletter email, editorial writing, web copy, and campaign strategy — all produced for this single concept and tailored to different audiences.</div>
+        <div class="skill-evidence">See: LinkedIn section, newsletter, editorial intro</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Social media management</div>
+        <div class="skill-desc">A three-post LinkedIn sequence designed for industry outreach, with strategic timing and distinct content angles (awareness, spotlight, how-to).</div>
+        <div class="skill-evidence">See: LinkedIn content sequence</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Website content &amp; WordPress</div>
+        <div class="skill-desc">A restructured homepage wireframe with clearer visitor pathways, designed for WordPress block editor compatibility. Includes design rationale.</div>
+        <div class="skill-evidence">See: WordPress concept section</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Graphic design &amp; visual identity</div>
+        <div class="skill-desc">Consistent visual language across the entire page — typography, colour system, layout — aligned with CERN's institutional identity while bringing a fresh editorial voice.</div>
+        <div class="skill-evidence">See: Full page design and layout</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Digital campaign strategy</div>
+        <div class="skill-desc">A three-pillar communication framework (Visibility, Accessibility, Community) designed to structure outreach to industry across channels and audience segments.</div>
+        <div class="skill-evidence">See: Campaign framework section</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Outreach to industry</div>
+        <div class="skill-desc">The entire concept is built around the procurement-to-industry communication challenge — from the editorial framing to the interactive supplier journey navigator.</div>
+        <div class="skill-evidence">See: Supplier journey navigator</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap-narrow">
+    <div class="logo serif">CERN Procurement <span>·</span> Concept</div>
+    <p>A fictional outreach campaign, designed end-to-end as a single concept piece.</p>
+    <p>Campaign strategy · editorial copy · interactive diagnostic · LinkedIn sequence · newsletter template · WordPress wireframe · skills mapping.</p>
+    <div class="disclaimer">
+      This page is an independent portfolio concept and is not affiliated with, endorsed by, or produced for the European Organisation for Nuclear Research (CERN). All content is original. Statistics referenced (annual procurement spend, FCC tunnel circumference, employment projections, procurement multiplier) are drawn from publicly available CERN sources and feasibility reports. No confidential or internal CERN materials were used.
+    </div>
+    <div class="signature">Concept by Bengi Özateş · 2026</div>
+  </div>
+</footer>
+
+<script>
+  /* SUPPLIER JOURNEY NAVIGATOR */
+  const jAnswers = {};
+  const jSteps = document.querySelectorAll('.j-step');
+  const jBars = document.querySelectorAll('#j-progress div');
+  let jCurrent = 1;
+
+  document.querySelectorAll('.j-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      jAnswers[btn.dataset.key] = btn.dataset.value;
+      if (jCurrent < 3) {
+        document.querySelector(`.j-step[data-step="${jCurrent}"]`).classList.remove('active');
+        jCurrent++;
+        document.querySelector(`.j-step[data-step="${jCurrent}"]`).classList.add('active');
+        jBars[jCurrent - 1].classList.add('done');
+      } else {
+        showJourneyResult();
+      }
+    });
+  });
+
+  function showJourneyResult() {
+    document.querySelector(`.j-step[data-step="3"]`).classList.remove('active');
+    document.getElementById('j-result').classList.add('active');
+    jBars.forEach(b => b.classList.add('done'));
+
+    const { stage, sector, barrier } = jAnswers;
+
+    const headlines = {
+      new: "Welcome — you are exactly who this campaign is designed to reach.",
+      curious: "You are closer than you think. The next step is smaller than it looks.",
+      registered: "You have done the groundwork. Now it is about positioning.",
+      active: "You already know the process. Your story could inspire the next supplier."
+    };
+    document.getElementById('j-headline').textContent = headlines[stage];
+
+    const sectorLabels = {
+      engineering: "mechanical and electrical engineering",
+      civil: "civil engineering and construction",
+      cryo: "cryogenics, vacuum, and magnet systems",
+      it: "IT, software, and professional services"
+    };
+
+    const barrierTexts = {
+      process: "Many companies share this perception — and it is one of the key communication challenges this campaign addresses. CERN's tendering process, while structured, is designed to be fair and transparent. The e-Procurement platform guides you through each stage, and your national Industrial Liaison Officer is available to help navigate the specifics.",
+      visibility: "This is one of the most common barriers for companies in " + sectorLabels[sector] + ". Forthcoming tenders and market surveys are published on the procurement website and distributed through the e-Procurement platform's notification system. Registering and selecting your sectors of interest is the single most effective step you can take.",
+      scale: "CERN works with companies of all sizes. Many of its most critical suppliers are small and medium enterprises with specialised technical capabilities. In " + sectorLabels[sector] + ", niche expertise is often more valuable than scale.",
+      ilo: "Your national Industrial Liaison Officer (ILO) is the best first point of contact. ILOs act as a bridge between companies in each Member State and CERN's procurement team. They can advise on upcoming opportunities relevant to " + sectorLabels[sector] + " and guide you through registration."
+    };
+    document.getElementById('j-body').textContent = barrierTexts[barrier];
+
+    const nextSteps = {
+      new: "Visit procurement.web.cern.ch and register on the e-Procurement platform. Select your sectors of expertise to receive notifications about relevant market surveys and tenders. It takes about fifteen minutes.",
+      curious: "Complete your registration on the e-Procurement platform if you have not already, and contact your national ILO to introduce your company's capabilities. They can flag relevant opportunities as they emerge.",
+      registered: "Review the current list of forthcoming tendering procedures on the procurement website. Consider attending the next CERN Industry Webinar to meet the procurement team and learn about upcoming needs in your sector.",
+      active: "If you would be open to sharing your experience as a CERN supplier, reach out to the Procurement Service's communication team. Supplier stories are one of the most effective tools for encouraging new companies to engage with CERN."
+    };
+    document.getElementById('j-next').textContent = nextSteps[stage];
+
+    const extras = {
+      engineering: "The HL-LHC upgrade and FCC preparatory phase are expected to generate significant demand for precision-engineered components over the coming years.",
+      civil: "With the FCC project proposing a 90.7 km tunnel, civil engineering and construction will be among the largest procurement categories in the next decade.",
+      cryo: "CERN's accelerator programme relies heavily on cryogenic and vacuum technology. The FCC will require next-generation superconducting magnet systems and associated infrastructure.",
+      it: "CERN's computing needs span data processing, software development, cybersecurity, and professional services — a broad and growing procurement category."
+    };
+    document.getElementById('j-extra').textContent = extras[sector];
+  }
+
+  function restartJourney() {
+    jCurrent = 1;
+    Object.keys(jAnswers).forEach(k => delete jAnswers[k]);
+    document.getElementById('j-result').classList.remove('active');
+    jSteps.forEach(s => s.classList.remove('active'));
+    document.querySelector('.j-step[data-step="1"]').classList.add('active');
+    jBars.forEach((b, i) => {
+      if (i === 0) b.classList.add('done'); else b.classList.remove('done');
+    });
+  }
+</script>
+
+</body>
+</html>
